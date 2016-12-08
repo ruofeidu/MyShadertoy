@@ -10,12 +10,13 @@ vec2 neighbors[NUM_NEIGHBORS];
 #define MASK(UV) (tap(iChannel1, vec2(UV)))
 #define BASE(UV) (tap(iChannel2, vec2(UV)))
 #define SRC(UV) (tap(iChannel3, vec2(UV)))
-
+#define MAX_ITERATIONS 200000.0
+#define EPS 0.00001
 vec3 tap(sampler2D tex, vec2 uv) { return texture2D(tex, uv).rgb; }
 
 bool isInitialization() {
     vec2 lastResolution = texture2D(iChannel1, vec2(0.5) / iResolution.xy).yz;   
-    return any(notEqual(lastResolution, iResolution.xy)) || iFrame < 4;
+    return any(notEqual(lastResolution, iResolution.xy));
 }
 
 bool isMasked(vec2 uv) {
@@ -28,15 +29,16 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     fragColor.a = 1.0; 
     
   	mixingGradients = texture2D(iChannel1, vec2(1.5) / iResolution.xy).y;  
-  	float resetBlending = texture2D(iChannel1, vec2(1.5) / iResolution.xy).z;  
-    // init
-    if (isInitialization() || resetBlending > 0.5) {
-    	fragColor.rgb = BASE(uv);
+  	float frameReset = texture2D(iChannel1, vec2(1.5) / iResolution.xy).z;  
+     
+    // init: resolution does not match / current frame is black / mode changes
+    if (isInitialization() || RES(vec2(1.0)).r < EPS || float(iFrame - 2) < frameReset) {
+        fragColor.rgb = BASE(uv);
         return; 
     }
     
     vec2 p = uv; 
-    if (isMasked(p)) {
+    if (isMasked(p)) { // && frameReset + MAX_ITERATIONS > float(iFrame)
         vec3 col = vec3(0.0); 
         float convergence = 0.0; 
         
