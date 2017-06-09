@@ -1,3 +1,9 @@
+/** 
+ * Print-friendly Color Palette x8
+ * Link to demo: https://www.shadertoy.com/view/4ltSWN
+ * starea @ ShaderToy
+ */
+
 vec3 RGBtoHCV(in vec3 RGB)
 {
 	float Epsilon = 1e-10;
@@ -32,8 +38,25 @@ vec4 RGBLabel(int i) {
 				return RGBColor(0.0, 0.0, 0.0);
 }
 
+
+
+vec4 RGBLabelnew(int i) {
+	if (i == 0) return RGBColor(255.0, 255.0, 179.0);  else
+	if (i == 1) return RGBColor(252.0, 205.0, 229.0);  else
+	if (i == 2) return RGBColor(190.0, 186.0, 218.0); else
+	if (i == 3) return RGBColor(141.0, 211.0, 199.0); else
+	if (i == 4) return RGBColor(179.0, 222.0, 105.0); else
+	if (i == 5) return RGBColor(253.0, 180.0,  98.0); else
+	if (i == 6) return RGBColor(128.0, 177.0, 211.0); else
+	if (i == 7) return RGBColor(251.0, 128.0, 114.0); else
+				return RGBColor(0.0, 0.0, 0.0);
+}
+
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
 	vec2 uv = fragCoord.xy / iResolution.xy;
-	fragColor = RGBLabel(int(floor(uv.x * 9.0))); 
+    vec4 col = RGBLabelnew(int(floor(uv.x * 9.0))); 
+    float grey = 0.25 * col.x + 0.5 * col.y + 0.25 * col.z;
+	fragColor = (mod(iGlobalTime, 2.0) < 1.0) ? col : 
+    vec4(vec3(grey), 1.0); 
 }
