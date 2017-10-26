@@ -6,6 +6,7 @@ Here stores some of my GLSL code written in Shadertoy.com
 ![Interactive Poisson Blending](http://www.duruofei.com/Public/trailer/poisson.jpg)
 * [Interactive Poisson Blending](https://www.shadertoy.com/view/4l3Xzl)
     * [Blog post](http://blog.ruofeidu.com/interactive-poisson-blending)
+
 ![UNIFIED GNOMONIC AND STEREOGRAPHIC PROJECTIONS](http://blog.ruofeidu.com/wp-content/uploads/2017/04/p2.jpg)
 * [Unified Gnomonic & Stereographic](https://www.shadertoy.com/view/ldBczm)
 	* [Blog post](http://blog.ruofeidu.com/unified-gnomonic-stereographic-projections/)
@@ -24,12 +25,14 @@ Here stores some of my GLSL code written in Shadertoy.com
 * [Postprocessing Thermal](https://www.shadertoy.com/view/4dcSDH)
 * [2D Affine Transformation](https://www.shadertoy.com/view/llBSWw)
 * [Image Fade-In Effect](https://www.shadertoy.com/view/MlcSz2)
+
 ![Code Golf: Halftone Image](http://blog.ruofeidu.com/wp-content/uploads/2017/10/golf.jpg)
 * [Dot Screen / Halftone](https://www.shadertoy.com/view/4sBBDK)
 	* [Blog post](http://blog.ruofeidu.com/code-golf-halftone-image/)
 * [Equirectangular Fibonacci Sphere](https://www.shadertoy.com/view/Ms2yDK)
 * [Parameterized Gabor Filters](https://www.shadertoy.com/view/4sBcRV)
 * [Bilateral Filter to Look Younger](https://www.shadertoy.com/view/XtVGWG)
+
 ![Brightness, Contrast, Hue, Saturation, Vibrance](http://blog.ruofeidu.com/wp-content/uploads/2017/10/hue.jpg)
 * [Brightness, Contrast, Hue, Saturation, Vibrance](https://www.shadertoy.com/view/MdjBRy)
 	* [Blog post] (http://blog.ruofeidu.com/postprocessing-brightness-contrast-hue-saturation-vibrance/)
