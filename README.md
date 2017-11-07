@@ -16,6 +16,11 @@ Here stores some of my GLSL code written in Shadertoy.com
 * [Dotted Drawing / Sketch Effect](https://www.shadertoy.com/view/ldSyzV)
 	* [Blog post](http://blog.ruofeidu.com/dotted-drawing-sketch-effect/)
 * [Edges with Bilateral Filters](https://www.shadertoy.com/view/MlG3WG)
+
+![Instgram Brannan Filter](http://blog.ruofeidu.com/wp-content/uploads/2017/11/earlybird.jpg)
+* [Instgram Brannan Filter](https://www.shadertoy.com/view/4lSyDK)
+* [Instgram Earlybird Filter](https://www.shadertoy.com/view/XlSyWV)
+    * [Blog post](http://blog.ruofeidu.com/implementing-instagram-filters-brannan/)
 * [0-4 Order of Spherical Harmonics](https://www.shadertoy.com/view/4dsyW8)
 * [Cubemap to Gnomonic Projection](https://www.shadertoy.com/view/4sjcz1)
 * [Unified Gnomonic & Stereographic](https://www.shadertoy.com/view/ldBczm)
